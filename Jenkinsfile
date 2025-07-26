@@ -20,7 +20,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: 'staging']],
                     userRemoteConfigs: [[
-                        url: 'git@github.com:sapph2c/capstone.git',
+                        url: 'git@github.com:mihirsanjay/Jenkins-thing.git',
                         credentialsId: 'git-ssh'
                     ]]
                 ])
