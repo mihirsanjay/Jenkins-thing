@@ -18,9 +18,9 @@ pipeline {
             steps {
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: 'staging']],
+                    branches: [[name: 'main']],
                     userRemoteConfigs: [[
-                        url: 'git@github.com:mihirsanjay/Jenkins-thing.git',
+                        url: 'https://github.com/mihirsanjay/Jenkins-thing.git',
                         credentialsId: 'github-pat'
                     ]]
                 ])
