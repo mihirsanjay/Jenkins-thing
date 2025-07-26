@@ -31,7 +31,10 @@ pipeline {
             agent { label 'linux' }
             steps {
                 dir('scripts/src') {
-                    sh 'make LHOST=$LHOST LPORT=$LPORT HOSTNAME=$HOSTNAME all'
+                    sh '''
+                    chmod +x generate.sh
+                    make LHOST=$LHOST LPORT=$LPORT HOSTNAME=$HOSTNAME all
+                    '''
                 }
             }
         }
