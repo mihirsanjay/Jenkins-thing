@@ -21,7 +21,7 @@ pipeline {
                     branches: [[name: 'staging']],
                     userRemoteConfigs: [[
                         url: 'git@github.com:mihirsanjay/Jenkins-thing.git',
-                        credentialsId: 'git-ssh'
+                        credentialsId: 'github-pat'
                     ]]
                 ])
             }
