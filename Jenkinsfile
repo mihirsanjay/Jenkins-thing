@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DEEPSEEK_API_KEY = credentials('deepseek-api-key')
-        LHOST = '100.85.95.64'
+        LHOST = '192.168.0.109'
         LPORT = 4444
         HOSTNAME = 'student-virtual-machine'
         MALWARE_PATH = 'src/Simple/PE-Injector/PE-Injector.cpp'
