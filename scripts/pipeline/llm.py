@@ -114,7 +114,7 @@ class Client:
         executable_name: str,
     ):
         self.client = OpenAI(
-            base_url=base_url,
+            base_url="https://api.deepseek.com/v1",
             api_key=api_key,
         )
         self.shellcode_path = shellcode_path
