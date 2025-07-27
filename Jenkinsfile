@@ -2,7 +2,8 @@ pipeline {
     agent none
 
     environment {
-        DEEPSEEK_API_KEY = credentials('deepseek-api-key')
+        // DEEPSEEK_API_KEY = credentials('deepseek-api-key')
+        OPENAI_API_KEY = credentials('openai-api-key')
         LHOST = '192.168.0.109'
         LPORT = 4444
         HOSTNAME = 'student-virtual-machine'
