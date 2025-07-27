@@ -46,6 +46,7 @@ pipeline {
                 dir('scripts') {
                     sh '''
                         export PYTHONPATH=$PWD
+                        export OPENAI_API_KEY=$OPENAI_API_KEY
                         uv run pipeline prebuild
                         chmod +x prebuild.sh
                         ./prebuild.sh
@@ -69,6 +70,7 @@ pipeline {
                 dir('scripts') {
                     sh '''
                         export PYTHONPATH=$PWD
+                        export OPENAI_API_KEY=$OPENAI_API_KEY
                         uv run pipeline postbuild
                         chmod +x postbuild.sh
                         ./postbuild.sh
