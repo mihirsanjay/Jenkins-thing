@@ -37,7 +37,7 @@ def callback(lhost, lport, timeout):
 @click.option("--shellcode-path", envvar="SHELLCODE_PATH")
 @click.option("--malware-path", envvar="MALWARE_PATH")
 def prebuild(api_key, base_url, shellcode_path, malware_path):
-    client = Client(shellcode_path, malware_path, "")
+    client = Client(api_key, base_url, shellcode_path, malware_path, "")
     client.prebuild()
 
 

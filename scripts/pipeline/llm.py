@@ -108,19 +108,15 @@ sudo apt-get install -y <packages (LLM will fill this out)>
 class Client:
     def __init__(
         self,
-        # api_key: str,
-        # base_url: str,
+        api_key: str,
+        base_url: str,
         shellcode_path: str,
         malware_path: str,
         executable_name: str,
     ):
-        # self.client = OpenAI(
-        #     base_url="https://api.deepseek.com/v1",
-        #     api_key=api_key,
-        # )
         self.client = OpenAI(
-            api_key=os.environ["OPENAI_API_KEY"],
-            base_url="https://api.openai.com/v1",
+            api_key=api_key,
+            base_url=base_url,
         )
         self.shellcode_path = shellcode_path
         self.malware_path = malware_path
@@ -135,7 +131,7 @@ class Client:
             user_prompt = f"$SHELLCODE_PATH: {self.shellcode_path}\n$MALWARE_PATH: {self.malware_path}\nmalware:\n{malware}"
 
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="deepseek-chat",
                 messages=[
                     {"role": "system", "content": PRE_SYSTEM_PROMPT},
                     {"role": "user", "content": user_prompt},
@@ -155,7 +151,7 @@ class Client:
         user_prompt = f"EXECUTABLE_NAME: {self.executable_name}"
 
         response = self.client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="deepseek-chat",
             messages=[
                 {"role": "system", "content": POST_SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},
